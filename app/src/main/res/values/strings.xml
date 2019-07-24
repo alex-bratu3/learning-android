@@ -1,3 +1,9 @@
 <resources>
     <string name="app_name">LearningAndroid</string>
+    <string name="hello_kitty">Hello World!</string>
+    <string-array name="activities">
+        <item>Iesit cu bicicleta</item>
+        <item>Pictat</item>
+        <item>isit la film</item>
+    </string-array>
 </resources>
