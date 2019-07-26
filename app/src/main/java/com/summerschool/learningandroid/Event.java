@@ -16,6 +16,10 @@ public class Event {
         this.contPeople = contPeople;
     }
 
+    public Event() {
+
+    }
+
     public String getTitle() {
         return title;
     }

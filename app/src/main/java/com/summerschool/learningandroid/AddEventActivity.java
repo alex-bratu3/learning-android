@@ -7,6 +7,9 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+
 public class AddEventActivity extends AppCompatActivity {
 
     EditText title, type, number;
@@ -30,10 +33,18 @@ public class AddEventActivity extends AppCompatActivity {
                 String typeValue = type.getText().toString();
                 int numberOfPeople = Integer.parseInt(number.getText().toString());
 
+                // Write a message to the database
+                FirebaseDatabase database = FirebaseDatabase.getInstance();
+                DatabaseReference myRef = database.getReference("Alex_Bratu");
+
+                Event event = new Event(titleValue, typeValue, numberOfPeople);
+
+                myRef.child(System.currentTimeMillis() + "").setValue(event);
+
                 Intent intent = new Intent(AddEventActivity.this, EventListActivity.class);
-                intent.putExtra("title_key", titleValue);
-                intent.putExtra("type_key", typeValue);
-                intent.putExtra("number_key", numberOfPeople);
+//                intent.putExtra("title_key", titleValue);
+//                intent.putExtra("type_key", typeValue);
+//                intent.putExtra("number_key", numberOfPeople);
 
                 startActivity(intent);
             }

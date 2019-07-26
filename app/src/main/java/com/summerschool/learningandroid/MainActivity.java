@@ -20,8 +20,10 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        pickDateBtn = findViewById(R.id.find_activity);
-        findFriendsBtn = findViewById(R.id.find_activity);
+        getSupportActionBar().hide();
+
+        pickDateBtn = findViewById(R.id.choose_start_date_btn);
+        findFriendsBtn = findViewById(R.id.find_me_friends_btn);
 
         pickDateBtn.setOnClickListener(new View.OnClickListener() {
             @Override
